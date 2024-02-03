@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 1817072754}
-  prefabToInstantiate: {fileID: 5827672230423601118, guid: feb57007569e59d40abf348ffc877faa, type: 3}
+  ball: {fileID: 5827672230423601118, guid: feb57007569e59d40abf348ffc877faa, type: 3}
   radius: 3
 --- !u!4 &179866152
 Transform:
