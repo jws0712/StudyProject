@@ -125,14 +125,14 @@ TextureImporter:
         width: 27
         height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a2faf41d99472e4688669cfc759ff4a
-      internalID: -1491068808
+      spriteID: 842851957a00c204bb4528894beaabdd
+      internalID: 1305630252
       vertices: []
       indices: 
       edges: []
@@ -146,14 +146,14 @@ TextureImporter:
         width: 27
         height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25cf2a8323b51084a8c62fa6e3331a02
-      internalID: 363948596
+      spriteID: 67ac10a33b724464684437c141483606
+      internalID: -1726894921
       vertices: []
       indices: 
       edges: []
@@ -167,14 +167,14 @@ TextureImporter:
         width: 27
         height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a53ca4ede58462b459c34c5e2f67cc33
-      internalID: -2136025273
+      spriteID: 600042070e96f6041818cad6ba7a0ac2
+      internalID: 723559744
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bird_0: -1491068808
-      Bird_1: 363948596
-      Bird_2: -2136025273
+      Bird_0: 1305630252
+      Bird_1: -1726894921
+      Bird_2: 723559744
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/PTL/Scenes/PTL_Title.unity
-    guid: 997f527fb4fc55d418b29c17e35d2003
+    path: Assets/DR/Scene/DInoTitle.unity
+    guid: 940ee7a9b2589284484aa050787526b6
   - enabled: 1
-    path: Assets/PTL/Scenes/PTL.unity
-    guid: eba9d0fa6fc3b3d409bc7429481d687f
+    path: Assets/DR/Scene/DinoRun.unity
+    guid: fd6e98e48ccddc14d92452f1d200c176
   m_configObjects: {}
