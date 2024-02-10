@@ -9,6 +9,7 @@ TagManager:
   - GameManager
   - Money
   - GM
+  - Ground
   layers:
   - Default
   - TransparentFX
