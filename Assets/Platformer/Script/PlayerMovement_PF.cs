@@ -9,6 +9,7 @@ public class PlayerMovement_PF : MonoBehaviour
     public float jumpPower;
     public float Speed;
     public bool IsGround = true;
+    public bool IsAttack = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,40 +21,67 @@ public class PlayerMovement_PF : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space) && IsGround)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGround && IsAttack == false)
         {
             rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             IsGround = false;
             anim.SetBool("IsJumping", true);
-            
         }
+
+        if (Input.GetMouseButtonDown(0) && IsAttack == false && IsGround == true)
+        {
+            anim.SetTrigger("Attack");
+            IsAttack = true;
+            StartCoroutine(AttackTime());
+        }
+
     }
+
+    IEnumerator AttackTime()
+    {
+        yield return new WaitForSeconds(1.3f);
+        IsAttack = false;
+
+    }
+
     private void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(x * Speed, rb.velocity.y);
-        anim.SetFloat("yVelocity", rb.velocity.y);
-
-
-        if (rb.velocity.x > 0)
+        if(IsAttack == false)
         {
-            transform.rotation = Quaternion.Euler(Quaternion.identity.x, 0, Quaternion.identity.y);
-            anim.SetTrigger("Walk");
 
+            float x = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(x * Speed, rb.velocity.y);
+            anim.SetFloat("yVelocity", rb.velocity.y);
+            anim.SetBool("Walk", true);
+
+
+
+            if (rb.velocity.x > 0)
+            {
+                transform.rotation = Quaternion.Euler(Quaternion.identity.x, 0, Quaternion.identity.y);
+                
+
+            }
+            else if (rb.velocity.x < 0)
+            {
+                transform.rotation = Quaternion.Euler(Quaternion.identity.x, 180, Quaternion.identity.y);
+                
+
+
+            }
+
+            else if(rb.velocity.x == 0)
+            {
+
+                anim.SetTrigger("Idle");
+                anim.SetBool("Walk", false);
+            }
         }
-        else if (rb.velocity.x < 0)
-        {
-            transform.rotation = Quaternion.Euler(Quaternion.identity.x, 180, Quaternion.identity.y);
-            anim.SetTrigger("Walk");
-
-
-        }
-
         else
         {
-            
-            anim.SetTrigger("Idle");
+            rb.velocity = new Vector2(0, 0);
         }
+
 
         
 
@@ -66,8 +94,13 @@ public class PlayerMovement_PF : MonoBehaviour
             IsGround = true;
             anim.SetBool("IsJumping", false);
 
-
         }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+            anim.SetBool("IsJumping", true);
+
+        
     }
 
 
