@@ -10,6 +10,7 @@ public class PlayerMovement_PF : MonoBehaviour
     public float Speed;
     public bool IsGround = true;
     public bool IsAttack = false;
+    public float ForwordAttack = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,14 +59,15 @@ public class PlayerMovement_PF : MonoBehaviour
 
             if (rb.velocity.x > 0)
             {
-                transform.rotation = Quaternion.Euler(Quaternion.identity.x, 0, Quaternion.identity.y);
+                transform.localScale = new Vector3(4, 4, 4);
                 
 
             }
             else if (rb.velocity.x < 0)
             {
-                transform.rotation = Quaternion.Euler(Quaternion.identity.x, 180, Quaternion.identity.y);
-                
+                transform.localScale = new Vector3(-4, 4, 4);
+
+
 
 
             }
@@ -79,7 +81,8 @@ public class PlayerMovement_PF : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(0, 0);
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
 
